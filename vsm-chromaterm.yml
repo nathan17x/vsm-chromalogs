@@ -13,6 +13,8 @@ palette:
   status-5: '#a2bc02' # olive
   status-6: '#79bf02' # green
   status-7: '#28c501' # neon green
+  read-blue: '#c2d9ff' # readable blue
+  read-pink: '#dcadff' # readable pink
 
 rules:
 # - description: Numbers
@@ -131,6 +133,11 @@ rules:
   color: f.type-6
   exclusive: true
 
+- description: GPIO Block
+  regex: \{GP-I/O:[^{}]*\}
+  color: f.type-6
+  exclusive: true
+
 - description: Delegated
   regex: delegated
   color: f.status-3
@@ -142,3 +149,15 @@ rules:
 - description: Success
   regex: Success
   color: f.status-7
+
+- description: Failure
+  regex: Failure
+  color: f.status-1
+
+- description: Inbound Crosspoint Connect
+  regex: ^\s*<<.*$
+  color: f.read-blue
+
+- description: Outbound Crosspoint Connect
+  regex: ^\s*>>.*$
+  color: f.read-pink
