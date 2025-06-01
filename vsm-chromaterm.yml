@@ -124,7 +124,7 @@ rules:
   regex: critical source format change detected
   color: f.status-1
 
-- description: SDP # unsure if this works correctly on real logs
+- description: SDP 
   regex: sdp_a"\s*=\s*"([^"]*)
   color: f.type-1
 
